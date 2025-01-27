@@ -13,6 +13,8 @@ public class EnterPoint : MonoBehaviour
     private float _timeScale = 1;
     
     //test comment
+
+    //second test comment
     void Start()
     {
         Time.timeScale = _timeScale;
