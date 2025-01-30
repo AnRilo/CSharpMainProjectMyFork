@@ -44,22 +44,21 @@ namespace UnitBrains.Player
             // Homework 1.4 (1st block, 4rd module)
             ///////////////////////////////////////
             List<Vector2Int> result = GetReachableTargets();
-            List<Vector2Int> result_bak = result.ToList();
-            int targetIndex = -1;
+            Vector2Int target = Vector2Int.zero;
             float dist = float.MaxValue;
             while (result.Count > 1)
             {
                 if (DistanceToOwnBase(result[result.Count - 1]) < dist)
                 {
                     dist = DistanceToOwnBase(result[result.Count - 1]);
-                    targetIndex = result.Count - 1;
+                    target = result[result.Count - 1];
                 }
                 result.RemoveAt(result.Count - 1);
             }
-            if (targetIndex != -1) 
+            if (target != Vector2Int.zero) 
             { 
                 result.Clear();
-                result.Add(result_bak[targetIndex]); 
+                result.Add(target); 
             }
             return result;
             ///////////////////////////////////////
