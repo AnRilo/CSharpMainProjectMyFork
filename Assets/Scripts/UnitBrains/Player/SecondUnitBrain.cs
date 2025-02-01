@@ -46,14 +46,14 @@ namespace UnitBrains.Player
             List<Vector2Int> result = GetReachableTargets();
             Vector2Int target = Vector2Int.zero;
             float dist = float.MaxValue;
-            while (result.Count > 1)
+            //while (result.Count > 1)
+            for (int i = 0; i < result.Count; i++)
             {
-                if (DistanceToOwnBase(result[result.Count - 1]) < dist)
+                if (DistanceToOwnBase(result[i]) < dist)
                 {
-                    dist = DistanceToOwnBase(result[result.Count - 1]);
-                    target = result[result.Count - 1];
+                    dist = DistanceToOwnBase(result[i]);
+                    target = result[i];
                 }
-                result.RemoveAt(result.Count - 1);
             }
             if (target != Vector2Int.zero) 
             { 
