@@ -55,7 +55,7 @@ namespace UnitBrains.Player
                     target = result[i];
                 }
             }
-            if (target != Vector2Int.zero) 
+            if (dist != float.MaxValue)
             { 
                 result.Clear();
                 result.Add(target); 
